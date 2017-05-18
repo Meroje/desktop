@@ -13,6 +13,8 @@ if (process.platform === 'darwin') {
   binaryPath = path.join(distPath, `${productName}.app`, 'Contents', 'MacOS', `${productName}`)
 } else if (process.platform === 'win32') {
   binaryPath = path.join(distPath, `${productName}.exe`)
+} else if (process.platform === 'linux') {
+  binaryPath = path.join(distPath, `${productName}`)
 } else {
   console.error(`I dunno how to run on ${process.arch} :(`)
   process.exit(1)
